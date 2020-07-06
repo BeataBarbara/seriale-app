@@ -1,13 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Lista from './components/lista'
+import Detale from './components/detale'
 import * as serviceWorker from './serviceWorker';
+import {Route, BrowserRouter} from 'react-router-dom';
+
+const routing = (
+<BrowserRouter>
+<div>
+<Route exact path = '/' component={Lista}/>
+<Route  path = '/lista' component={Lista}/>
+<Route path = '/detale/:id' component={Detale}/>
+</div>
+</BrowserRouter>
+
+)
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  routing,
   document.getElementById('root')
 );
 
